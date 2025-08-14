@@ -35,7 +35,7 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-serif font-bold gradient-text text-glow"
           >
-            <Link href="/" className="hover:text-primary-400 transition-colors duration-300">
+            <Link href="/" className="text-slate-100 hover:text-white transition-colors duration-300">
               Евгений Соколовский
             </Link>
           </motion.div>
@@ -54,7 +54,7 @@ export default function Navigation() {
                   className={`relative px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                     pathname === item.href 
                       ? 'text-primary-400 bg-primary-500 bg-opacity-10 border border-primary-500 border-opacity-30' 
-                      : 'text-gray-300 hover:text-white hover:bg-white hover:bg-opacity-5'
+                      : 'text-slate-200 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   {item.label}
@@ -67,7 +67,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-primary-400 transition-colors duration-300"
+              className="text-slate-100 hover:text-white transition-colors duration-300"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
@@ -89,7 +89,7 @@ export default function Navigation() {
           initial={{ opacity: 0, y: -20 }} 
           animate={{ opacity: 1, y: 0 }} 
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-black bg-opacity-95 px-6 py-4 space-y-4 border-t border-gray-800"
+          className="md:hidden bg-white bg-opacity-95 px-6 py-4 space-y-4 border-t border-gray-200"
         >
           {navItems.map(item => (
             <Link 
@@ -99,7 +99,7 @@ export default function Navigation() {
               className={`block py-2 px-4 rounded-lg ${
                 pathname === item.href 
                   ? 'text-primary-400 bg-primary-500 bg-opacity-10 border border-primary-500 border-opacity-30' 
-                  : 'text-gray-300 hover:text-white hover:bg-white hover:bg-opacity-5'
+                  : 'text-gray-700 hover:text-black hover:bg-black hover:bg-opacity-5'
               }`}
             >
               {item.label}
