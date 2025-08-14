@@ -7,13 +7,11 @@ import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -42,6 +40,7 @@ export default function Navigation() {
             </Link>
           </motion.div>
           
+          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item, index) => (
               <motion.div
@@ -59,14 +58,6 @@ export default function Navigation() {
                   }`}
                 >
                   {item.label}
-                  {pathname === item.href && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute inset-0 bg-primary-500 bg-opacity-10 border border-primary-500 border-opacity-30 rounded-full -z-10"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    />
-                  )}
                 </Link>
               </motion.div>
             ))}
@@ -74,14 +65,48 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button className="text-white hover:text-primary-400 transition-colors duration-300">
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white hover:text-primary-400 transition-colors duration-300"
+            >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                {isMenuOpen ? (
+                  // Иконка "крестик"
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  // Иконка "бургер"
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden bg-black bg-opacity-95 px-6 py-4 space-y-4 border-t border-gray-800"
+        >
+          {navItems.map(item => (
+            <Link 
+              key={item.href} 
+              href={item.href} 
+              onClick={() => setIsMenuOpen(false)}
+              className={`block py-2 px-4 rounded-lg ${
+                pathname === item.href 
+                  ? 'text-primary-400 bg-primary-500 bg-opacity-10 border border-primary-500 border-opacity-30' 
+                  : 'text-gray-300 hover:text-white hover:bg-white hover:bg-opacity-5'
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </motion.div>
+      )}
     </nav>
   )
 }
