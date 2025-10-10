@@ -42,7 +42,7 @@ export default function RootLayout({
             alt="Фон"
             fill
             priority
-            className="object-cover scale-105 grayscale"
+            className="object-cover scale-105 grayscale "
           />
           <div className="absolute inset-0 bg-black/40"></div>
               </div>

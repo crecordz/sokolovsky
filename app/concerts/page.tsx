@@ -100,7 +100,7 @@ export default function Concerts() {
         >
             <div className="relative rounded-3xl overflow-hidden">
             <Image
-              src="/images/1.jpg"
+              src="/images/8.jpg"
               alt="Евгений Соколовский на сцене"
               width={1200}
               height={400}

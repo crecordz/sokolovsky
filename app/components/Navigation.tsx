@@ -26,7 +26,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 font-metropolis ${
       isScrolled ? 'bg-black' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto container-padding">

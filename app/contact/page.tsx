@@ -18,7 +18,7 @@ export default function Contact() {
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8">
             <span className="gradient-text">Контакты</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl text-slate-200 max-w-4xl mx-auto font-metropolis">
             Свяжитесь для организации концертов, сотрудничества или просто для общения
           </p>
         </motion.div>
