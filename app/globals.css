@@ -2,9 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --font-inter: 'Inter', sans-serif;
   --font-playfair: 'Playfair Display', serif;
+  --font-metropolis: 'Metropolis', sans-serif;
 }
 
 * {
@@ -68,7 +141,7 @@ body {
   }
   
   .border-glow {
-    @apply border border-primary-500 border-opacity-30 shadow-lg;
+    @apply border border-primary-500 border-opacity-50 shadow-lg;
   }
   
   .text-glow {
@@ -106,10 +179,10 @@ html {
 }
 
 /* Focus styles */
-*:focus {
+/* *:focus {
   outline: 2px solid #38bdf8;
   outline-offset: 2px;
-}
+} */
 
 /* Loading animation */
 @keyframes shimmer {

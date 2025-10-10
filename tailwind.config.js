@@ -11,16 +11,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#fef7ee',
-          100: '#fdedd6',
-          200: '#fad7ac',
-          300: '#f6ba77',
-          400: '#008080',
-          500: '#00FFFF',
-          600: '#2F4F4F',
-          700: '#b8430f',
-          800: '#933514',
-          900: '#762e14',
+          50: '#cfa065fc',
+          100: '#cfa065fc',
+          200: '#cfa065fc',
+          300: '#cfa065fc',
+          400: '#cfa065fc',
+          500: '#cfa065fc',
+          600: '#cfa065fc',
+          700: '#cfa065fc',
+          800: '#cfa065fc',
+          900: '#cfa065fc',
         },
         dark: {
           50: '#f8fafc',
@@ -49,6 +49,7 @@ module.exports = {
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
         sans: ['Inter', 'sans-serif'],
+        metropolis: ['Metropolis', 'Arial', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

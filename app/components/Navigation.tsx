@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
@@ -26,22 +27,22 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      isScrolled ? 'glass-effect-strong backdrop-blur-2xl' : 'bg-transparent'
+      isScrolled ? 'bg-black' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto container-padding">
         <div className="flex items-center justify-between h-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-serif font-bold gradient-text text-glow"
+            className="flex items-center gap-3"
           >
-            <Link href="/" className="text-slate-100 hover:text-white transition-colors duration-300">
-              Евгений Соколовский
+            <Link href="/" className="flex items-center group">
+              <Image src="/eslogo.png" alt="ES Logo" width={192} height={192} className="rounded-sm" />
             </Link>
           </motion.div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.href}
@@ -51,9 +52,9 @@ export default function Navigation() {
               >
                 <Link
                   href={item.href}
-                  className={`relative px-4 py-2 rounded-full transition-all duration-300 font-medium ${
+                  className={`relative px-4 py-2 rounded-full transition-none font-medium whitespace-nowrap ${
                     pathname === item.href 
-                      ? 'text-primary-400 bg-primary-500 bg-opacity-10 border border-primary-500 border-opacity-30' 
+                      ? 'text-white bg-primary-500 bg-opacity-20' 
                       : 'text-slate-200 hover:text-white hover:bg-white/10'
                   }`}
                 >
@@ -67,7 +68,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-100 hover:text-white transition-colors duration-300"
+className="text-slate-100 hover:text-white transition-colors duration-300"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
@@ -96,9 +97,9 @@ export default function Navigation() {
               key={item.href} 
               href={item.href} 
               onClick={() => setIsMenuOpen(false)}
-              className={`block py-2 px-4 rounded-lg ${
+              className={`block py-2 px-4 rounded-lg whitespace-nowrap ${
                 pathname === item.href 
-                  ? 'text-primary-400 bg-primary-500 bg-opacity-10 border border-primary-500 border-opacity-30' 
+                  ? 'text-white bg-primary-500 bg-opacity-20' 
                   : 'text-gray-700 hover:text-black hover:bg-black hover:bg-opacity-5'
               }`}
             >

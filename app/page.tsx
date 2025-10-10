@@ -10,8 +10,7 @@ export default function Home() {
       {/* Hero Section with Background Image */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Page overlay over global background */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-white/40 via-white/20 to-transparent"></div>
-        <div className="absolute inset-0 z-0 bg-gradient-radial from-primary-400 to-transparent opacity-10"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-br "></div>
         
         <div className="relative z-30 max-w-7xl mx-auto container-padding py-16">
           <div className="text-center">
@@ -23,9 +22,9 @@ export default function Home() {
               className="mt-[72px] md:mt-[88px] mb-8"
             >
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6">
-                <span className="gradient-text">Евгений</span>
+                 <span className="gradient-text font-metropolis font-light">Евгений</span>
                 <br />
-                <span className="text-slate-100">Соколовский</span>
+                <span className="text-slate-100 font-metropolis font-light;">Соколовский</span>
               </h1>
             </motion.div>
 
@@ -39,7 +38,7 @@ export default function Home() {
               <p className="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-4">
                 Композитор, пианист, виртуоз
               </p>
-              <p className="text-lg md:text-xl text-primary-300 font-medium">
+              <p className="text-lg md:text-xl text-primary-500 font-medium">
                 Классик XXI века
               </p>
             </motion.div>
@@ -67,7 +66,7 @@ export default function Home() {
               className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
             >
               <Link href="/about" className="block">
-                <div className="glass-effect-strong rounded-3xl p-8 hover-lift card-hover border-glow text-slate-900">
+                <div className="glass-effect-strong rounded-3xl p-8 hover-lift card-hover border-glow text-slate-900 min-h-[200px]">
                   <h3 className="text-xl font-serif font-bold mb-3 text-primary-600">
                     О пианисте
                   </h3>
@@ -78,7 +77,7 @@ export default function Home() {
               </Link>
 
               <Link href="/repertoire" className="block">
-                <div className="glass-effect-strong rounded-3xl p-8 hover-lift card-hover border-glow text-slate-900">
+                <div className="glass-effect-strong rounded-3xl p-8 hover-lift card-hover border-glow text-slate-900 min-h-[200px]">
                   <h3 className="text-xl font-serif font-bold mb-3 text-primary-600">
                     Репертуар
                   </h3>
@@ -89,7 +88,7 @@ export default function Home() {
               </Link>
 
               <Link href="/concerts" className="block">
-                <div className="glass-effect-strong rounded-3xl p-8 hover-lift card-hover border-glow text-slate-900">
+                <div className="glass-effect-strong rounded-3xl p-8 hover-lift card-hover border-glow text-slate-900 min-h-[200px]">
                   <h3 className="text-xl font-serif font-bold mb-3 text-primary-600">
                     Проекты
                   </h3>
@@ -100,7 +99,7 @@ export default function Home() {
               </Link>
 
               <Link href="/contact" className="block">
-                <div className="glass-effect-strong rounded-3xl p-8 hover-lift card-hover border-glow text-slate-900">
+                <div className="glass-effect-strong rounded-3xl p-8 hover-lift card-hover border-glow text-slate-900 min-h-[200px]">
                   <h3 className="text-xl font-serif font-bold mb-3 text-primary-600">
                     Контакты
                   </h3>
@@ -153,10 +152,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary-500 bg-opacity-10 rounded-full blur-xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary-400 bg-opacity-5 rounded-full blur-2xl animate-float"></div>
-        <div className="absolute top-1/2 left-20 w-16 h-16 bg-primary-600 bg-opacity-10 rounded-full blur-lg animate-pulse-slow"></div>
       </div>
     </div>
   )
